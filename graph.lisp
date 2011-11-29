@@ -63,7 +63,7 @@
 (defun in-node (a links)
   (if (null links)
     nil
-    (if (eq a (car (car links)))
+    (if (eq a (cdr (car links)))
       (cons (car links) (in-node a (cdr links)))
       (in-node a (cdr links))
     )
@@ -73,7 +73,7 @@
 (defun out-node (a links)
   (if (null links)
     nil
-    (if (eq a (cdr (car links)))
+    (if (eq a (car (car links)))
       (cons (car links) (out-node a (cdr links)))
       (out-node a (cdr links))
     )
