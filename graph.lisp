@@ -36,7 +36,7 @@
 (defun rm-link-helper (link links)
   (if (null links)
     nil
-    (if (equal-link? link links)
+    (if (equal-link? link (car links))
       (cdr links)
       (cons (car links) (rm-link-helper link (cdr links)))
     )
